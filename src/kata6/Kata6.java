@@ -17,6 +17,7 @@ public class Kata6 {
             inst = sc.nextLine();
             switch(inst){
                 case "exit": 
+                    System.out.println("Exiting...");
                     exit=true;
                     break;
                 case "car":
@@ -25,7 +26,7 @@ public class Kata6 {
                     coche.label();
                     break;
                 case "helicopter":
-                    Helicopter heli = new Helicopter(serial.next(), "angelo");
+                    Helicopter heli = new Helicopter(serial.next());
                     heli.pack();
                     heli.label();
                     break;
