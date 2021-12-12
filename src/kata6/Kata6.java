@@ -1,15 +1,15 @@
 package kata6;
 
 import java.util.Scanner;
-import toys.Car;
-import toys.Helicopter;
 import toys.SerialNumberGenerator;
+import toys.ToyBusiness;
 
 
 public class Kata6 {
 
     public static void main(String[] args) {
         SerialNumberGenerator serial = new SerialNumberGenerator();
+        ToyBusiness toy = new ToyBusiness();
         Scanner sc = new Scanner(System.in);
         String inst = "";
         boolean exit = false;
@@ -21,14 +21,10 @@ public class Kata6 {
                     exit=true;
                     break;
                 case "car":
-                    Car coche = new Car(serial.next());
-                    coche.pack();
-                    coche.label();
+                    toy.createCar();
                     break;
                 case "helicopter":
-                    Helicopter heli = new Helicopter(serial.next());
-                    heli.pack();
-                    heli.label();
+                    toy.createHelicopter();
                     break;
                 default:
                     System.out.println("Command unknown!");
