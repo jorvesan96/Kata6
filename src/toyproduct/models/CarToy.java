@@ -1,18 +1,20 @@
-package toys;
+package toyproduct.models;
 
-public class Car {
+import toyproduct.Toy;
+
+public class CarToy implements Toy{
     private final int serialNumber;
-    private final String type;
     
-    public Car(int serialNumber) {
+    public CarToy(int serialNumber) {
         this.serialNumber = serialNumber;
-        type = "car";
     }
     
+    @Override  
     public void pack(){
         System.out.println("The car " + this.serialNumber + " is being packing");
     }
     
+    @Override  
     public void label(){
         System.out.println("The car " + this.serialNumber + " is being labeling");
     }

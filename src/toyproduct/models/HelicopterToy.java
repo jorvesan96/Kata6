@@ -1,18 +1,20 @@
-package toys;
+package toyproduct.models;
 
-public class Helicopter {
+import toyproduct.Toy;
+
+public class HelicopterToy implements Toy{
     private final int serialNumber;
-    private String type;
 
-    public Helicopter(int serialNumber) {
+    public HelicopterToy(int serialNumber) {
         this.serialNumber = serialNumber;
-        type="helicopter";
     }
     
+    @Override    
     public void pack(){
         System.out.println("The helicopter " + this.serialNumber + " is being packing");
     }
     
+    @Override  
     public void label(){
         System.out.println("The helicopter " + this.serialNumber + " is being labeling");
     }
