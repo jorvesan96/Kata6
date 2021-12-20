@@ -1,13 +1,17 @@
 package kata6;
 
+import branches.AmericanToyBusiness;
+import branches.AsianToyBusiness;
 import java.util.Scanner;
-import toys.ToyBusiness;
+import business.ToyBusiness;
 
 
 public class Kata6 {
 
     public static void main(String[] args) {
-        ToyBusiness toy = new ToyBusiness();
+        ToyBusiness americanToy = new AmericanToyBusiness();
+        //ToyBusiness asianToy = new AsianToyBusiness();
+        
         Scanner sc = new Scanner(System.in);
         String inst = "";
         boolean exit = false;
@@ -18,11 +22,11 @@ public class Kata6 {
                     System.out.println("Exiting...");
                     exit=true;
                     break;
-                case "car":
-                    toy.createToy("car");
+                case "Car":
+                    americanToy.createToy(inst);
                     break;
-                case "helicopter":
-                    toy.createToy("helicopter");
+                case "Helicopter":
+                    americanToy.createToy(inst);
                     break;
                 default:
                     System.out.println("Command unknown!");
