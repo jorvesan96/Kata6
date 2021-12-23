@@ -2,15 +2,26 @@ package kata6;
 
 import java.util.Scanner;
 import business.ToyBusiness;
-import factories.regionalfactories.AsianToyFactory;
-import factories.regionalfactories.AmericanToyFactory;
+import factories.regionalfactories.AmericanCarToyFactory;
+import factories.regionalfactories.AsianHelicopterToyFactory;
+import factories.regionalfactories.AmericanHelicopterToyFactory;
+import factories.regionalfactories.AsianCarToyFactory;
 
 public class Kata6 {
 
     public static void main(String[] args) {
-        AmericanToyFactory americanToyFactory = new AmericanToyFactory();
-        AsianToyFactory asianToyFactory = new AsianToyFactory();
-        ToyBusiness americanToy = new ToyBusiness(americanToyFactory); //asianToyFactory
+        
+        AmericanCarToyFactory americanCarToyFactory;
+        AmericanHelicopterToyFactory americanHelicopterToyFactory;
+        //AsianCarToyFactory asianCarToyFactory;
+        //AsianHelicopterToyFactory asianHelicopterToyFactory;
+        
+        ToyBusiness toyBusiness = new ToyBusiness();
+        toyBusiness.add("car", new AmericanCarToyFactory());
+        toyBusiness.add("helicopter", new AmericanHelicopterToyFactory());
+        //toyBusiness.add("car", new AsianCarToyFactory());
+        //toyBusiness.add("helicopter", new AsianHelicopterToyFactory());
+        
         Scanner sc = new Scanner(System.in);
         String inst = "";
         boolean exit = false;
@@ -21,14 +32,18 @@ public class Kata6 {
                     System.out.println("Exiting...");
                     exit=true;
                     break;
-                case "Car":
-                    americanToyFactory.createToy(inst);
-                    //asianToyFactory.createToy(inst);
+                case "car":
+                    toyBusiness.produceToy(inst);
                     break;
-                case "Helicopter":
-                    americanToyFactory.createToy(inst);
-                    //asianToyFactory.createToy(inst);
+                case "helicopter":
+                    toyBusiness.produceToy(inst);
                     break;
+                /*case "AsianCar":
+                    asianCarToyFactory.createToy(inst);
+                    break;
+                case "AsianHelicopter":
+                    asianHelicopterToyFactory.createToy(inst);
+                    break;*/
                 default:
                     System.out.println("Command unknown!");
                     
